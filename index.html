@@ -40,10 +40,10 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line
 .btn:disabled{opacity:0.45;cursor:not-allowed;transform:none;box-shadow:none;}
 .btn svg{width:14px;height:14px;}
 
-.sheet{max-width:960px;margin:0 auto;padding:40px 28px 90px;}
+ .sheet{max-width:920px;margin:0 auto;padding:24px 22px 48px;}
 
 /* ---------- header ---------- */
-header.hero{padding-bottom:22px;margin-bottom:26px;border-bottom:2px solid var(--ink);}
+header.hero{padding-bottom:14px;margin-bottom:16px;border-bottom:1.6px solid var(--ink);}
 .eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;}
 h1.name{font-family:var(--serif);font-size:clamp(30px,4.6vw,44px);font-weight:600;letter-spacing:-0.01em;margin:0 0 6px;}
 .role{font-size:16px;color:var(--muted);margin:0 0 16px;font-weight:500;}
@@ -55,12 +55,16 @@ h1.name{font-family:var(--serif);font-size:clamp(30px,4.6vw,44px);font-weight:60
 .contact-row a:hover{border-color:var(--accent);color:var(--accent);}
 .contact-row svg{width:13px;height:13px;opacity:0.7;}
 
-/* ---------- two column layout ---------- */
-.layout{display:grid;grid-template-columns:255px 1fr;gap:34px;align-items:start;}
-.side, .main{min-width:0;}
-.side > section, .main > section{margin-bottom:26px;}
-.sec-head{font-family:var(--mono);font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent2);margin:0 0 12px;display:flex;align-items:center;gap:9px;white-space:nowrap;}
-.sec-head::after{content:"";flex:1;height:1px;background:var(--line);}
+/* ---------- content layout ---------- */
+.layout{display:flex;flex-direction:column;gap:16px;}
+.overview-grid{display:grid;grid-template-columns:1.35fr 0.85fr;gap:14px;align-items:start;}
+.card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+.sec-head{font-family:var(--mono);font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent2);margin:0 0 10px;display:flex;align-items:center;gap:9px;white-space:nowrap;}
+.sec-head::after{content:"";flex:1;height:1px;background:var(--line);} 
+.quick-list{display:grid;gap:8px;}
+.quick-item{display:flex;justify-content:space-between;gap:8px;font-size:13px;}
+.quick-item strong{color:var(--accent2);font-weight:600;}
+.quick-item span{color:var(--muted);text-align:right;}
 
 /* side panels */
 .side .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;}
@@ -83,7 +87,7 @@ h1.name{font-family:var(--serif);font-size:clamp(30px,4.6vw,44px);font-weight:60
 
 /* main column */
 p.summary{font-size:14.5px;color:#2b3033;max-width:70ch;}
-.job{position:relative;padding-left:20px;margin-bottom:20px;border-left:2px solid var(--accent-soft);}
+.job{position:relative;padding-left:20px;margin-bottom:14px;border-left:2px solid var(--accent-soft);}
 .job:last-child{margin-bottom:0;}
 .job::before{content:"";position:absolute;left:-6px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--accent);}
 .job-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 14px;margin-bottom:2px;}
@@ -104,7 +108,7 @@ ul.bullets li::before{content:"▸";position:absolute;left:0;color:var(--accent2
 .project p{margin:5px 0;font-size:13px;color:#2b3033;}
 .stack-line{font-family:var(--mono);font-size:10.5px;color:var(--amber);background:var(--amber-soft);display:inline-block;padding:2px 8px;border-radius:5px;margin-top:5px;}
 
-footer.foot{margin-top:32px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--muted);text-align:center;}
+footer.foot{margin-top:20px;padding-top:12px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--muted);text-align:center;}
 
 /* ---------- loading / error ---------- */
 .state-screen{max-width:560px;margin:80px auto;padding:0 20px;text-align:center;font-family:var(--mono);color:var(--muted);}
@@ -137,7 +141,7 @@ footer.foot{margin-top:32px;padding-top:16px;border-top:1px solid var(--line);fo
   }
   .sheet{ max-width:100%; padding:0; }
 
-  header.hero{ border-bottom:1.6pt solid #191d1a; padding-bottom:8pt; margin-bottom:9pt; }
+  header.hero{ border-bottom:1.6pt solid #191d1a; padding-bottom:6pt; margin-bottom:7pt; }
   .eyebrow{ font-size:7.6pt; color:#0d6e5e; margin-bottom:3pt; }
   h1.name{ font-family:'Fraunces', Georgia, serif; font-size:19pt; margin-bottom:2pt; }
   .role{ font-size:9.6pt; margin-bottom:6pt; }
@@ -146,8 +150,10 @@ footer.foot{margin-top:32px;padding-top:16px;border-top:1px solid var(--line);fo
   .contact-row a{ color:#0d6e5e; border-bottom:none; font-weight:500; }
   .contact-row svg{ width:9px; height:9px; stroke:#0d6e5e; }
 
-  .layout{ display:grid; grid-template-columns:56mm 1fr; gap:7mm; align-items:start; }
-  .side > section, .main > section{ margin-bottom:9pt; break-inside:avoid; }
+  .layout{ display:flex; flex-direction:column; gap:6mm; }
+  .overview-grid{ display:grid; grid-template-columns:1.2fr 0.8fr; gap:4mm; align-items:start; }
+  .card-grid{ display:grid; grid-template-columns:1fr 1fr; gap:4mm; }
+  .panel{ break-inside:avoid; }
 
   .sec-head{ font-size:7.6pt; color:#3a4a7a; margin-bottom:5pt; letter-spacing:0.05em; }
   .sec-head::after{ background:#dfe3de; }
@@ -168,22 +174,23 @@ footer.foot{margin-top:32px;padding-top:16px;border-top:1px solid var(--line);fo
 
   p.summary{ font-size:8.7pt; max-width:100%; }
 
-  .job{ padding-left:11pt; margin-bottom:8pt; border-left:1.3pt solid #e1f0ec; break-inside:avoid; }
+  .job{ padding-left:11pt; margin-bottom:6pt; border-left:1.3pt solid #e1f0ec; break-inside:avoid; }
   .job::before{ left:-4.5pt; top:3.5pt; width:6.5pt; height:6.5pt; }
   .job-title{ font-size:8.9pt; }
   .job-meta{ font-size:6.9pt; padding:1.4pt 6pt; }
   .job-loc{ font-size:7.3pt; margin-bottom:3pt; }
-  ul.bullets li{ font-size:8.1pt; padding-left:10pt; margin-bottom:2pt; }
-  ul.bullets li::before{ font-size:7pt; }
+  ul.bullets{ margin:0; padding-left:0; list-style:none; }
+  ul.bullets li{ font-size:8.1pt; padding-left:11pt; margin-bottom:2pt; line-height:1.25; color:#151515; }
+  ul.bullets li::before{ content:"•"; left:0; top:0.2pt; color:#0d6e5e; font-size:10pt; line-height:1; font-weight:700; }
 
-  .project{ border:0.6pt solid #dde1db; border-left:2pt solid #a3661c; border-radius:5px; padding:6.5pt 9pt; margin-bottom:6.5pt; background:#fefdfb; break-inside:avoid; }
+  .project{ border:0.6pt solid #dde1db; border-left:2pt solid #a3661c; border-radius:5px; padding:6.5pt 9pt; margin-bottom:5.5pt; background:#fefdfb; break-inside:avoid; }
   .project-title{ font-size:8.5pt; }
   .project-client{ font-size:7pt; }
   .project-date{ font-size:6.9pt; }
   .project p{ font-size:7.8pt; margin:3pt 0; }
   .stack-line{ font-size:6.7pt; padding:1.6pt 6pt; margin-top:3pt; }
 
-  footer.foot{ display:block; margin-top:8pt; padding-top:6pt; font-size:6.3pt; }
+  footer.foot{ display:block; margin-top:6pt; padding-top:4pt; font-size:6.3pt; }
   a{ color:#0d6e5e !important; }
 }
 </style>
@@ -309,44 +316,53 @@ function render(data) {
     </header>
 
     <div class="layout">
-      <div class="side">
-        <section id="skills">
-          <p class="sec-head">Skills</p>
-          <div class="panel">${skillsHtml}</div>
-        </section>
-
-        <section id="education">
-          <p class="sec-head">Education</p>
-          <div class="panel">${educationHtml}</div>
-        </section>
-
-        <section id="achievements">
-          <p class="sec-head">Achievements</p>
-          <div class="panel">${achievementsHtml}</div>
-        </section>
-
-        <section id="languages">
-          <p class="sec-head">Languages</p>
-          <div class="panel"><div class="lang-list">${languagesHtml}</div></div>
-        </section>
-      </div>
-
-      <div class="main">
-        <section id="summary">
+      <div class="overview-grid">
+        <section id="summary" class="panel">
           <p class="sec-head">Summary</p>
           <p class="summary">${data.summary}</p>
         </section>
 
-        <section id="experience">
-          <p class="sec-head">Experience</p>
-          ${experienceHtml}
-        </section>
-
-        <section id="projects">
-          <p class="sec-head">Selected Projects</p>
-          ${projectsHtml}
+        <section id="highlights" class="panel">
+          <p class="sec-head">Highlights</p>
+          <div class="quick-list">
+            <div class="quick-item"><strong>Location</strong><span>${data.location}</span></div>
+            <div class="quick-item"><strong>Email</strong><span>${data.contact.email}</span></div>
+            <div class="quick-item"><strong>Phone</strong><span>${data.contact.phone}</span></div>
+          </div>
         </section>
       </div>
+
+      <div class="card-grid">
+        <section id="skills" class="panel compact-card">
+          <p class="sec-head">Skills</p>
+          ${skillsHtml}
+        </section>
+
+        <section id="education" class="panel compact-card">
+          <p class="sec-head">Education</p>
+          ${educationHtml}
+        </section>
+
+        <section id="achievements" class="panel compact-card">
+          <p class="sec-head">Achievements</p>
+          ${achievementsHtml}
+        </section>
+
+        <section id="languages" class="panel compact-card">
+          <p class="sec-head">Languages</p>
+          <div class="lang-list">${languagesHtml}</div>
+        </section>
+      </div>
+
+      <section id="experience">
+        <p class="sec-head">Experience</p>
+        ${experienceHtml}
+      </section>
+
+      <section id="projects">
+        <p class="sec-head">Selected Projects</p>
+        ${projectsHtml}
+      </section>
     </div>
 
     <footer class="foot">
