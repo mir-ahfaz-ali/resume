@@ -3,7 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resume — Loading…</title>
+<title id="page-title">Resume — Mir Ahfaz Ali</title>
+<meta id="meta-description" name="description" content="Professional resume for a qualified pharmacist and B.Pharm graduate specializing in patient counseling, prescription handling, regulatory compliance, and pharmacy operations.">
+<meta id="meta-keywords" name="keywords" content="Mir Ahfaz Ali, Ahfaz Ali, Mir A Hafiz Ali, Mir A Hafiz, Mir Afhaz Ali, Mir Ahfaz, Ahfaz, Mir Ali, Mir A Ali, A Hafiz Ali, A Hafiz, Ahfaz Ali resume, Mir Ahfaz Ali resume, Mir A Hafiz Ali resume, Ahfaz Ali CV, Mir Ahfaz Ali CV, Mir Ahfaz Ali pharmacist resume, Ahfaz Ali pharmacist resume, Ahfaz Ali BPharm resume, Mir Ahfaz Ali BPharm resume, Mir Ahfaz Ali B.Pharm resume, pharmacist resume, BPharm resume, B.Pharm resume, pharmacy resume, retail pharmacy resume, pharmacist CV, BPharm CV, clinical research resume, patient counseling, prescription handling, dispensing, regulatory compliance, ICH guidelines, pharmaceutical operations, medication safety, pharmaceutics, pharmacy graduate, hospital pharmacy, community pharmacy, retail pharmacist, pharmacy assistant, drug dispensing, drug information, medication counseling, healthcare professional, pharmacy professional, resume for pharmacist, CV for pharmacist, resume for BPharm, BPharm graduate, pharmacist Hyderabad, pharmacist India, pharmacy job resume, pharmacist experience resume">
+<meta name="author" content="Mir Ahfaz Ali">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0d6e5e">
+<meta property="og:title" id="og-title" content="Professional Resume | Pharmacist and B.Pharm Graduate">
+<meta property="og:description" id="og-description" content="Resume showcasing pharmacy expertise, clinical research knowledge, patient counseling, and regulatory compliance skills.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="./">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="twitter-title" content="Professional Resume | Pharmacist and B.Pharm Graduate">
+<meta name="twitter:description" id="twitter-description" content="Resume showcasing pharmacy expertise, clinical research knowledge, patient counseling, and regulatory compliance skills.">
+<link rel="canonical" href="./">
+<script type="application/ld+json" id="resume-schema"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
@@ -243,8 +257,78 @@ function escapeHtml(str){
 
 function chip(text){ return `<span class="chip">${text}</span>`; }
 
+function setMeta(id, attr, value, attrName='content') {
+  const el = document.getElementById(id);
+  if (el) el[attrName] = value;
+}
+
+function buildSeoData(data) {
+  const skillTerms = data.skills.flatMap(row => row.items.map(item => item.trim()));
+  const baseKeywords = [
+    'Mir',
+    'Ahfaz',
+    'Ahfaz Ali',
+    'Ahfaz Resume',
+    'Resume of Mir Ahfaz Ali',
+    'Pharmacist Resume',
+    'Ahfaz Ali Resume',
+    'BPharm',
+    'Bachelor of Pharmacy',
+    'Pharmacist',
+    'Pharmacy',
+    'MedPlus',
+    'Med Plus',
+    'Retail Pharmacy',
+    'Patient Counseling',
+    'Prescription Handling',
+    'Dispensing',
+    'Regulatory Compliance',
+    'Clinical Research',
+    'ICH Guidelines',
+    'Pharmaceutics',
+    'Medication Safety',
+    'Pharmaceutical Operations'
+  ];
+  const keywordList = [...new Set([...baseKeywords, ...data.titleTags, ...skillTerms, ...data.languages.map(l => l.name)])];
+  const seoDescription = `${data.name} is a ${data.title} and B.Pharm graduate specializing in ${skillTerms.slice(0, 6).join(', ')}. Based in ${data.location}, with experience in patient counseling, prescription handling, regulatory compliance, and pharmacy operations.`;
+
+  return {
+    title: `${data.name} | ${data.title} | B.Pharm, Pharmacist`,
+    description: seoDescription,
+    keywords: keywordList.join(', '),
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": data.name,
+      "jobTitle": data.title,
+      "description": seoDescription,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": data.location
+      },
+      "knowsAbout": keywordList,
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": data.title,
+        "description": `${data.title} specializing in patient counseling, prescription handling, and regulatory compliance.`
+      },
+      "alumniOf": data.education.map(item => item.school)
+    }
+  };
+}
+
 function render(data) {
-  document.title = `${data.name} — ${data.title}`;
+  const seo = buildSeoData(data);
+  document.title = seo.title;
+  setMeta('page-title', 'textContent', seo.title, 'textContent');
+  setMeta('meta-description', 'content', seo.description);
+  setMeta('meta-keywords', 'content', seo.keywords);
+  setMeta('og-title', 'content', seo.title);
+  setMeta('og-description', 'content', seo.description);
+  setMeta('twitter-title', 'content', seo.title);
+  setMeta('twitter-description', 'content', seo.description);
+  document.getElementById('resume-schema').textContent = JSON.stringify(seo.schema);
+
   const roleTags = data.titleTags.map(t => `<span class="tag">${t}</span>`).join(' · ');
 
   const contactBits = [];
