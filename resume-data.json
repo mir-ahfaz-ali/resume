@@ -1,0 +1,110 @@
+{
+  "name": "Mir Ahfaz Ali",
+  "title": "Pharmacist",
+  "titleTags": [
+    "Patient Counseling",
+    "Prescription Handling & Dispensing",
+    "Regulatory & Compliance Knowledge"
+  ],
+  "location": "Dasra Road, Near Arab Well, Mahal, Nagpur - 440032",
+  "lastUpdated": "07/2026",
+  "contact": {
+    "email": "ahafazali19990@gmail.com",
+    "phone": "+91 9527863405",
+    "github": "",
+    "linkedin": ""
+  },
+  "summary": "I am eager to work in a challenging environment that offers opportunities for continuous growth and learning. I am committed to enhancing my skills and contributing effectively to the organization’s success. My goal is to leverage my abilities to deliver the best results and drive the company forward.",
+  "skills": [
+    {
+      "key": "technical_skills",
+      "items": [
+        "MS Office",
+        "Prescription Handling & Dispensing",
+        "Regulatory & Compliance Knowledge",
+        "ICH Guidelines"
+      ]
+    },
+    {
+      "key": "professional_skills",
+      "items": [
+        "Team Player",
+        "Leadership",
+        "Adaptability & Learning Agility",
+        "Decision Making",
+        "Patient Counseling"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Pharmacist",
+      "company": "MEDPLUS PHARMACY (NAGPUR)",
+      "dates": "Currently working",
+      "location": "Nagpur",
+      "bullets": [
+        "Currently working as a pharmacist in a retail pharmacy setting."
+      ]
+    },
+    {
+      "title": "Trainee",
+      "company": "ZIM Laboratory, Kamleshwar, Nagpur",
+      "dates": "08/2023 — 09/2023",
+      "location": "Nagpur",
+      "bullets": [
+        "Worked in the production department as a trainee."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "B.Pharm Project",
+      "client": "Central India College of Pharmacy",
+      "dates": "2024",
+      "description": "Study on formulation and evaluation of Carica papaya leaves aqueous extract chewable tablet.",
+      "stack": ["Pharmaceutics", "Tablet Formulation", "Evaluation Studies"]
+    },
+    {
+      "title": "B.Pharm Project",
+      "client": "Central India College of Pharmacy",
+      "dates": "2024",
+      "description": "Formulation and evaluation of walnut face scrub.",
+      "stack": ["Cosmetic Formulation", "Face Scrub", "Evaluation"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor's in Pharmacy",
+      "school": "Central India College of Pharmacy, DBATU",
+      "years": "2021 — 2024 | Nagpur"
+    },
+    {
+      "degree": "Diploma in Pharmacy",
+      "school": "Sonekar College of Pharmacy, MSBTE",
+      "years": "2019 — 2021 | Nagpur"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Advanced Diploma in Clinical Research",
+      "description": "Certification from Clinomic Institute of Clinical Research, Nagpur."
+    },
+    {
+      "title": "ICH-GCP Certification",
+      "description": "Certified by the National Institute on Drug Abuse (NIDA)."
+    },
+    {
+      "title": "Internship Certification",
+      "description": "Completed internship at ZIM Laboratory Pvt. Ltd."
+    },
+    {
+      "title": "MS-CIT",
+      "description": "Certification from MKCL."
+    }
+  ],
+  "languages": [
+    { "name": "English", "level": "Proficient" },
+    { "name": "Hindi", "level": "Proficient" },
+    { "name": "Marathi", "level": "Proficient" }
+  ]
+}
