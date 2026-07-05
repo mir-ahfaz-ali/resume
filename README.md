@@ -1,3 +1,4 @@
 # Resume
-
-Resume ~ Mir Ahfaz Ali
+My Resume
+## Live Page
+[View Resume](https://mir-ahfaz-ali.github.io/resume/)
